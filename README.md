@@ -7,6 +7,7 @@
 This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1LPri7q_SL5O4e5OaQ4wT8lla6lYCa5wY
+![Image]((https://github.com/sunshinebreath20115-hue/Gemini-2.5-falsh-image-chalenge-project-image-to-style/blob/main/0907.gif?raw=true))
 
 ## Run Locally
 
