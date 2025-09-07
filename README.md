@@ -10,6 +10,7 @@ View your app in AI Studio: https://ai.studio/apps/drive/1LPri7q_SL5O4e5OaQ4wT8l
 ![Image]((https://github.com/sunshinebreath20115-hue/Gemini-2.5-falsh-image-chalenge-project-image-to-style/blob/main/0907.gif?raw=true))
 The explanatory video can be found in the project under the name 0907.
 I used Nano Banana to edit photos and transform them into specific styles.
+You will find two compressed files, each of which is a different version of the project in a slightly different format.
 ## Run Locally
 
 **Prerequisites:**  Node.js
