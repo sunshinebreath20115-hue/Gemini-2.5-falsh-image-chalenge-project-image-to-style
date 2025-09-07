@@ -14,9 +14,26 @@ const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
  */
 export const generatePromptForStyle = async (styleDescription: string): Promise<string> => {
   try {
-    const metaPrompt = `You are an expert prompt engineer for a generative AI model that edits images. Your task is to create a highly detailed and effective prompt in English to transform a user's image based on a requested style. The prompt must be descriptive, artistic, and specify technical details like lighting, color palette, mood, and composition to achieve a stunning, high-quality result. Generate ONLY the prompt itself, without any introductory text, explanation, or quotation marks. The final output must be just the prompt text.
+    const metaPrompt = `As a world-class AI prompt engineer specializing in visual transformation, your mission is to craft a masterfully detailed and evocative prompt in English. This prompt will guide an image generation model to transform a user's photo according to a specific artistic style, while preserving the original photo's core subject and composition.
 
-Requested style: "${styleDescription}"`;
+**Core Instructions:**
+1.  **Style Application:** The primary goal is to apply the new style to the existing image content. The prompt must vividly describe the requested style: "${styleDescription}".
+2.  **Artistic & Technical Detail:** Elaborate on the style with specific artistic and technical keywords. Mention details about:
+    -   **Lighting:** (e.g., dramatic chiaroscuro, soft diffused light, neon glow, sun-drenched).
+    -   **Color Palette:** (e.g., muted monochromatic tones, vibrant complementary colors, vintage sepia).
+    -   **Texture & Brushwork:** (e.g., thick impasto brushstrokes, smooth digital finish, grainy film texture, watercolor bleed).
+    -   **Atmosphere & Mood:** (e.g., ethereal and dreamlike, gritty and dystopian, nostalgic and serene).
+3.  **Quality Enhancement:** Conclude the prompt with a string of powerful keywords to ensure the highest quality output, such as: "masterpiece, 8k resolution, photorealistic, intricate details, professional lighting, ultra-detailed".
+
+**Output Rules:**
+-   The output MUST be the prompt text ONLY.
+-   Do NOT include any preambles, explanations, or quotation marks (e.g., no "Here is the prompt:").
+-   The prompt must be a single, coherent paragraph.
+
+**Example for "Epic Fantasy Film":**
+Transform the image to look like a cinematic still from an epic fantasy film. The lighting should be magical and ethereal, with soft, glowing highlights and deep, dramatic shadows. The color palette should be rich and saturated, with deep greens, royal blues, and hints of gold. Infuse the atmosphere with a sense of wonder and ancient magic. Render with photorealistic quality, intricate details, professional cinematography, masterpiece, 8k resolution, ultra-detailed.
+
+Now, generate the prompt for the requested style: "${styleDescription}"`;
 
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
@@ -91,7 +108,8 @@ export const applyImageEffect = async (imageFile: File, prompt: string): Promise
         }
     } else {
         // This case handles when the response is blocked entirely.
-        text = "تم حظر الاستجابة بسبب إعدادات السلامة.";
+        // Return a key for localization instead of a hardcoded string.
+        text = "responseBlocked";
     }
 
 

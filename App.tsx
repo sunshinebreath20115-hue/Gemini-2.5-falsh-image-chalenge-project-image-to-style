@@ -58,7 +58,7 @@ const App: React.FC = () => {
         setTransformedImageUrl(result.imageUrl);
       } else {
         // Handle cases where the image is not returned but text might be (e.g., safety blocks)
-        setError(result.text || "Failed to generate image. The result was empty.");
+        setError(t(result.text || 'error_generationFailed'));
       }
       
     } catch (e: any) {

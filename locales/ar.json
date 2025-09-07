@@ -26,5 +26,7 @@
   "category_Photography": "تصوير فوتوغرافي",
   "category_Illustration": "رسم توضيحي",
   "category_Gaming": "ألعاب",
-  "toggleLanguage": "English"
+  "toggleLanguage": "English",
+  "responseBlocked": "تم حظر الاستجابة بسبب إعدادات السلامة.",
+  "error_generationFailed": "فشل في إنشاء الصورة. كانت النتيجة فارغة."
 }

@@ -26,5 +26,7 @@
   "category_Photography": "Photography",
   "category_Illustration": "Illustration",
   "category_Gaming": "Gaming",
-  "toggleLanguage": "العربية"
+  "toggleLanguage": "العربية",
+  "responseBlocked": "The response was blocked due to safety settings.",
+  "error_generationFailed": "Failed to generate image. The result was empty."
 }
